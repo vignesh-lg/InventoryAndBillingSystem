@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@Html.ActionLink("create new account", "Registration")
+
+@if (TempData["Message"] != null)
+{
+    <p>
+        @TempData["Message"].ToString()
+    </p>
+}
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                User Name
+            </td>
+            <td>
+                @Html.TextBox("emailId")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                @Html.TextBox("password")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+        </tr>
+    </table>
+}
+
+
