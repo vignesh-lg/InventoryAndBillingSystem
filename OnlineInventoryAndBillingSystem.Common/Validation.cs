@@ -7,11 +7,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineInventoryAndBillingSystem.Common
 {
-    [MetadataType(typeof(Validation))]
+   
     //public partial class User
     //{
     //    public string ConfirmPassword { get; set; }
     //}
+   
+    [MetadataType(typeof(Validation))]
     public class Validation
     {
         [Display(Name = "First Name")]

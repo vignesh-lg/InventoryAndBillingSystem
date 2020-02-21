@@ -26,8 +26,10 @@ namespace OnlineInventoryAndBillingSystem.Entity
     //    public string gender { get; set; }
     //    public string Search { get; set; }
     //    public int UserId { get; set; }
+  
+
     [MetadataType(typeof(Validation))]
-    public partial class User :Validation
+    public partial class User : Validation
     {
         public string ConfirmPassword { get; set; }
         public User(string UserName, string CustomerFirstName, string CustomerSecondName, string gender, string State, string City, string Address, string PinCode, string CellNumber, string Email, string DateOfBirth, string Password, int UserId)
@@ -59,7 +61,7 @@ namespace OnlineInventoryAndBillingSystem.Entity
             this.Email = Email;
             this.DateOfBirth = DateOfBirth;
             this.Password = Password;
-            this.gender = gender;
+            this.gender =gender;
         }
         public User(string UserName, string Password)
         {

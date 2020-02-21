@@ -1,11 +1,12 @@
 ﻿
 @{
     ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 
 <h2>Login</h2>
 @Html.ActionLink("create new account", "Registration")
-
+@{Html.RenderAction("Menu", "User");}
 @if (TempData["Message"] != null)
 {
     <p>

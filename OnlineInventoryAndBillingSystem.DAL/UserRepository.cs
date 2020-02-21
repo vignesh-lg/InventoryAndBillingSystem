@@ -3,13 +3,47 @@ using OnlineInventoryAndBillingSystem.Entity;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Collections.Generic;
 
 namespace OnlineInventoryAndBillingSystem.DAL
 {
     public class UserRepository
     {
         public string sqlConnection = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+        public static List<String> stateList = new List<String>();
+        public static List<String> tamilnaducityList = new List<String>();
+        public static List<String> andhracityList = new List<String>();
+        public static List<String> banglorecityList = new List<String>();
+        static UserRepository()
+        {
+            stateList.Add("Tamil Nadu" );
+            stateList.Add("Andhra Pradesh");
+            stateList.Add("Bangalore");
+            tamilnaducityList.Add("Salem");
+            tamilnaducityList.Add("Chennai");
+            tamilnaducityList.Add("Coimbatore");
+            andhracityList.Add("Tirupathi");
+            andhracityList.Add("Hydreabad");
+            banglorecityList.Add("Mysore");
+            banglorecityList.Add("Manglore");
 
+        }
+        public static IEnumerable<String> GetDetails()
+        {
+            return stateList;
+        }
+        public static IEnumerable<String> GetTamilNaduDetails()
+        {
+            return tamilnaducityList;
+        }
+        public static IEnumerable<String> GetAndhraDetails()
+        {
+            return andhracityList;
+        }
+        public static IEnumerable<String> GetBangloreDetails()
+        {
+            return banglorecityList;
+        }
         public bool GetCustomerDetails(User user)
         {
             using (SqlConnection myConnection = new SqlConnection(sqlConnection))

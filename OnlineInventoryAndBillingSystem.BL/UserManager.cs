@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using OnlineInventoryAndBillingSystem.Entity;
 using OnlineInventoryAndBillingSystem.DAL;
 using OnlineInventoryAndBillingSystem.Common;
@@ -13,6 +11,22 @@ namespace OnlineInventoryAndBillingSystem.BL
     public class UserManager
     {
         UserRepository userRepository = new UserRepository();
+        public static IEnumerable<String> GetDetails()
+        {
+            return UserRepository.GetDetails();
+        }
+        public static IEnumerable<String> GetTamilNaduDetails()
+        {
+            return UserRepository.GetTamilNaduDetails();
+        }
+        public static IEnumerable<String> GetAndhraDetails()
+        {
+            return UserRepository.GetAndhraDetails(); ;
+        }
+        public static IEnumerable<String> GetBangloreDetails()
+        {
+            return UserRepository.GetBangloreDetails();
+        }
         public bool GetCustomerDetails(User user)
         {
             return userRepository.GetCustomerDetails(user);
